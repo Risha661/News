@@ -1,31 +1,31 @@
-const URL = 'ВАШ СЕРВЕР';
+// const URL = 'ВАШ СЕРВЕР';
 
-const fetchRequest = async (postfix, {
-  method = 'get',
-  callback,
-  body,
-  headers,
-}) => {
-  try {
-    const options = {
-      method,
-    };
+// const fetchRequest = async (postfix, {
+//   method = 'get',
+//   callback,
+//   body,
+//   headers,
+// }) => {
+//   try {
+//     const options = {
+//       method,
+//     };
 
-    if (body) options.body = JSON.stringify(body);
-    if (headers) options.headers = headers;
+//     if (body) options.body = JSON.stringify(body);
+//     if (headers) options.headers = headers;
 
-    const response = await fetch(`${URL}${postfix}`, options);
+//     const response = await fetch(`${URL}${postfix}`, options);
 
-    if (response.ok) {
-      const data = await response.json();
-      if (callback) return callback(null, data);
-      return;
-    }
+//     if (response.ok) {
+//       const data = await response.json();
+//       if (callback) return callback(null, data);
+//       return;
+//     }
 
-    throw new Error(`Ошибка ${response.status}: ${response.statusText}`);
-  } catch (err) {
-    return callback(err);
-  }
-};
+//     throw new Error(`Ошибка ${response.status}: ${response.statusText}`);
+//   } catch (err) {
+//     return callback(err);
+//   }
+// };
 
-export default fetchRequest;
+// export default fetchRequest;
